@@ -53,7 +53,7 @@ export function RegisterForm() {
               event.stopPropagation();
               setCreatePassword(!createPassword);
             }}
-            className="absolute right-10 top-[375px]"
+            className="absolute right-10 top-[370px]"
           >
             {createPassword ? (
               <Eye className="text-yellow-100" />
@@ -76,7 +76,7 @@ export function RegisterForm() {
               event.stopPropagation();
               setConfirmPassword(!confirmPassword);
             }}
-            className="absolute right-10 top-[447px]"
+            className="absolute right-10 top-[441px]"
           >
             {confirmPassword ? (
               <Eye className="text-yellow-100" />

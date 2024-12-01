@@ -2,8 +2,9 @@ import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { Input } from "~/components/ui/input";
 import AddInterest from "./add-interest";
+import { Button } from "~/components/ui/button";
 
-export default function EditInterest() {
+export default function Interest() {
   return (
     <div>
       <div className="flex justify-between items-center py-10 px-2">
@@ -16,9 +17,7 @@ export default function EditInterest() {
             Back
           </Link>
         </div>
-        <div className="text-[13px] text-blue-300">
-          <h1>Save</h1>
-        </div>
+        <div className="text-[13px] text-blue-300">Save</div>
       </div>
       <div className="p-8">
         <div className="bg-gradient-radial font-bold text-[13px] from-amber-300 via-white to-amber-300 text-transparent decoration-amber-300 bg-clip-text">

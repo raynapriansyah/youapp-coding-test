@@ -43,7 +43,7 @@ export function LoginForm() {
               event.stopPropagation();
               setShowPassword(!showPassword);
             }}
-            className="absolute right-10 top-[303px] "
+            className="absolute right-10 top-[299px] "
           >
             {showPassword ? (
               <Eye className="text-yellow-100" />
