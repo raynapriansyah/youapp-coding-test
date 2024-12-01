@@ -13,14 +13,16 @@ export function LoginForm() {
   return (
     <div className="w-full">
       <div className="flex flex-row items-center">
-        <ChevronLeft size={35} />
-        Back
+        <Link href="#" className="flex flex-rows items-center text-[13px]">
+          <ChevronLeft size={30} />
+          Back
+        </Link>
       </div>
       <div>
         <div className="mt-8 text-3xl font-bold p-8">Login</div>
         <div className="mb-4">
           <Input
-            className="text-sm px-8"
+            className="p-6 text-[13px] border-solid border-gray-600 focus:outline-none focus:ring-1 focus:placeholder-transparent"
             id="email"
             type="email"
             placeholder="Enter Username/Email"
@@ -29,7 +31,7 @@ export function LoginForm() {
         </div>
         <div className="mb-4">
           <Input
-            className="text-sm px-8"
+            className="p-6 text-[13px] border-solid border-gray-600 focus:outline-none focus:ring-1 focus:placeholder-transparent"
             id="password"
             type={showPassword ? "text" : "password"}
             placeholder="Enter Password"
@@ -41,9 +43,13 @@ export function LoginForm() {
               event.stopPropagation();
               setShowPassword(!showPassword);
             }}
-            className="absolute right-10 top-[295px]"
+            className="absolute right-10 top-[303px] "
           >
-            {showPassword ? <Eye /> : <EyeOff />}
+            {showPassword ? (
+              <Eye className="text-yellow-100" />
+            ) : (
+              <EyeOff className="text-yellow-100" />
+            )}
           </div>
         </div>
         <div className="grid gap-2">

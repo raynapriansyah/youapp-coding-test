@@ -8,19 +8,22 @@ import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 
 export function RegisterForm() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [createPassword, setCreatePassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState(false);
 
   return (
     <div className="w-full">
       <div className="flex flex-row items-center">
-        <ChevronLeft size={35} />
-        Back
+        <Link href="#" className="flex flex-rows items-center text-[13px]">
+          <ChevronLeft size={30} />
+          Back
+        </Link>
       </div>
       <div>
         <div className="mt-8 text-3xl font-bold p-8">Register</div>
         <div className="mb-4">
           <Input
-            className="text-sm px-8"
+            className="p-6 text-[13px] focus:outline-none focus:ring-1 focus:placeholder-transparent"
             id="email"
             type="email"
             placeholder="Enter Email"
@@ -29,7 +32,7 @@ export function RegisterForm() {
         </div>
         <div className="mb-4">
           <Input
-            className="text-sm px-8"
+            className="p-6 text-[13px] focus:outline-none focus:ring-1 focus:placeholder-transparent"
             id="username"
             type="text"
             placeholder="Create Username"
@@ -38,9 +41,9 @@ export function RegisterForm() {
         </div>
         <div className="mb-4">
           <Input
-            className="text-sm px-8"
+            className="p-6 text-[13px] focus:outline-none focus:ring-1 focus:placeholder-transparent"
             id="password"
-            type={showPassword ? "text" : "password"}
+            type={createPassword ? "text" : "password"}
             placeholder="Create Password"
             required
           />
@@ -48,18 +51,22 @@ export function RegisterForm() {
             role="button"
             onClick={(event) => {
               event.stopPropagation();
-              setShowPassword(!showPassword);
+              setCreatePassword(!createPassword);
             }}
-            className="absolute right-10 top-[295px]"
+            className="absolute right-10 top-[375px]"
           >
-            {showPassword ? <Eye /> : <EyeOff />}
+            {createPassword ? (
+              <Eye className="text-yellow-100" />
+            ) : (
+              <EyeOff className="text-yellow-100" />
+            )}
           </div>
         </div>
         <div className="mb-8">
           <Input
-            className="text-sm px-8"
+            className="p-6 text-[13px] focus:outline-none focus:ring-1 focus:placeholder-transparent"
             id="password"
-            type={showPassword ? "text" : "password"}
+            type={confirmPassword ? "text" : "password"}
             placeholder="Confirm Password"
             required
           />
@@ -67,11 +74,15 @@ export function RegisterForm() {
             role="button"
             onClick={(event) => {
               event.stopPropagation();
-              setShowPassword(!showPassword);
+              setConfirmPassword(!confirmPassword);
             }}
-            className="absolute right-10 top-[295px]"
+            className="absolute right-10 top-[447px]"
           >
-            {showPassword ? <Eye /> : <EyeOff />}
+            {confirmPassword ? (
+              <Eye className="text-yellow-100" />
+            ) : (
+              <EyeOff className="text-yellow-100" />
+            )}
           </div>
         </div>
         <div className="grid gap-2">
